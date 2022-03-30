@@ -21,6 +21,7 @@ public class StepTracker {
         }
      }
 
+
      class InputUserMonthDataSteps {
         Scanner scanner = new Scanner(System.in);
 

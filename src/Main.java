@@ -21,7 +21,7 @@ public class Main {
                         "авг, сент, окт, нояб, дек");
                 inputUserMonthDataSteps.inputUserMonth();
                 while (inputUserMonthDataSteps.inputUserMonth()) {
-                    System.out.println("Такого месяца нет. Попробуйте ещё раз");
+                    System.out.println("Такого месяца нет. Попробуйте ещё раз!");
                     inputUserMonthDataSteps.inputUserMonth();
                 }
 
