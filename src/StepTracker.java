@@ -1,26 +1,58 @@
 import java.util.Scanner;
 import java.util.HashMap;
-import java.util.ArrayList;
 
 public class StepTracker {
-    HashMap<Integer, MonthData> monthToDate = new HashMap<>();
+    HashMap<Integer, MonthData> monthToData = new HashMap<>();
 
     public StepTracker() {
         for (int i = 0; i < 12; i++) {
-            monthToDate.put(i, new MonthData());
+            monthToData.put(i, new MonthData());
 
         }
     }
 
     class MonthData {
-        ArrayList<Integer> dateToCalories = new ArrayList<>();
+        HashMap<Integer, Integer> dataToSteps = new HashMap<>();
 
         public MonthData() {
             for (int i = 0; i < 30; i++) {
-                dateToCalories.add(0);
-
+                dataToSteps.put(i, 0);
             }
         }
-    }
+     }
 
+     class InputUserMonthDataSteps {
+        Scanner scanner = new Scanner(System.in);
+
+        public boolean inputUserMonth() {
+            String userMonth = scanner.nextLine();
+            boolean isEqualsMonth = !userMonth.equals("янв") ||
+                    !userMonth.equals("февр") ||
+                    !userMonth.equals("март") ||
+                    !userMonth.equals("апр") ||
+                    !userMonth.equals("май") ||
+                    !userMonth.equals("июнь") ||
+                    !userMonth.equals("июль") ||
+                    !userMonth.equals("авг") ||
+                    !userMonth.equals("сент") ||
+                    !userMonth.equals("окт") ||
+                    !userMonth.equals("нояб") ||
+                    !userMonth.equals("дек");
+            return isEqualsMonth;
+        }
+
+         public void inputUserData () {
+             Integer userData = scanner.nextInt();
+
+         }
+
+         public void inputUserSteps () {
+             Integer userSteps  = scanner.nextInt();
+
+         }
+
+         public void enteringIndicatorsInTheTable() {
+
+         }
+     }
 }
