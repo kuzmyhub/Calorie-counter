@@ -20,10 +20,6 @@ public class Main {
                         "янв, февр, март, апр, май, июнь, июль, " +
                         "авг, сент, окт, нояб, дек");
                 inputUserMonthDataSteps.inputUserMonth();
-                while (inputUserMonthDataSteps.inputUserMonth()) {
-                    System.out.println("Такого месяца нет. Попробуйте ещё раз!");
-                    inputUserMonthDataSteps.inputUserMonth();
-                }
 
                 System.out.println("Укажите номер дня (от 1 до 30):");
                 inputUserMonthDataSteps.inputUserData();

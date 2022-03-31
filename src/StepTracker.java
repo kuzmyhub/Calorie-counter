@@ -25,21 +25,27 @@ public class StepTracker {
      class InputUserMonthDataSteps {
         Scanner scanner = new Scanner(System.in);
 
-        public boolean inputUserMonth() {
-            String userMonth = scanner.nextLine();
-            boolean isEqualsMonth = !userMonth.equals("янв") ||
-                    !userMonth.equals("февр") ||
-                    !userMonth.equals("март") ||
-                    !userMonth.equals("апр") ||
-                    !userMonth.equals("май") ||
-                    !userMonth.equals("июнь") ||
-                    !userMonth.equals("июль") ||
-                    !userMonth.equals("авг") ||
-                    !userMonth.equals("сент") ||
-                    !userMonth.equals("окт") ||
-                    !userMonth.equals("нояб") ||
-                    !userMonth.equals("дек");
-            return isEqualsMonth;
+        public void inputUserMonth() {
+            while (true) {
+                String userMonth = scanner.nextLine();
+                boolean isEqualsMonth = userMonth.equals("янв") ||
+                        userMonth.equals("февр") ||
+                        userMonth.equals("март") ||
+                        userMonth.equals("апр") ||
+                        userMonth.equals("май") ||
+                        userMonth.equals("июнь") ||
+                        userMonth.equals("июль") ||
+                        userMonth.equals("авг") ||
+                        userMonth.equals("сент") ||
+                        userMonth.equals("окт") ||
+                        userMonth.equals("нояб") ||
+                        userMonth.equals("дек");
+                if (isEqualsMonth) {
+                    break;
+                } else {
+                    System.out.println("Некорректный ввод. Попробуйте ещё раз.");
+                }
+            }
         }
 
          public void inputUserData () {
