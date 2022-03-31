@@ -12,6 +12,7 @@ public class Main {
 
 
 
+
         while (userInput != 0) {
             if (userInput == 1) {
                 // kod "Ввести кол-во шагов за опр-й день"
@@ -19,16 +20,19 @@ public class Main {
                         "Формат ввода:\n" +
                         "янв, февр, март, апр, май, июнь, июль, " +
                         "авг, сент, окт, нояб, дек");
-                inputUserMonthDataSteps.inputUserMonth();
+                int month = inputUserMonthDataSteps.inputUserMonth();
 
                 System.out.println("Укажите номер дня (от 1 до 30):");
-                inputUserMonthDataSteps.inputUserData();
+                int data = inputUserMonthDataSteps.inputUserData();
 
                 System.out.println("Укажите количество шагов");
-                inputUserMonthDataSteps.inputUserSteps();
+                int steps = inputUserMonthDataSteps.inputUserSteps();
+
+                inputUserMonthDataSteps.savingIndicatorsInTheTable(month, data, steps);
 
             } else if (userInput == 2) {
                 // kod "Напечатать статистику за опр-й мсяц"
+
 
             } else if (userInput == 3) {
                 // kod "Изменить цель по кол-ву шагов"
