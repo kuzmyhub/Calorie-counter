@@ -7,32 +7,31 @@ public class Main {
         int userInput = scanner.nextInt();
 
         StepTracker stepTracker = new StepTracker();
-        StepTracker.MonthData monthData = stepTracker.new MonthData();
+        StepTracker.MonthData monthData = new StepTracker.MonthData();
         StepTracker.InputUserMonthDataSteps inputUserMonthDataSteps = stepTracker.new InputUserMonthDataSteps();
-
-
-
+        StepTracker.Statistic statistic = stepTracker.new Statistic();
 
         while (userInput != 0) {
             if (userInput == 1) {
                 // kod "Ввести кол-во шагов за опр-й день"
-                System.out.println("Введите название месяца\n" +
-                        "Формат ввода:\n" +
-                        "янв, февр, март, апр, май, июнь, июль, " +
-                        "авг, сент, окт, нояб, дек");
+
                 int month = inputUserMonthDataSteps.inputUserMonth();
 
-                System.out.println("Укажите номер дня (от 1 до 30):");
                 int data = inputUserMonthDataSteps.inputUserData();
 
-                System.out.println("Укажите количество шагов");
                 int steps = inputUserMonthDataSteps.inputUserSteps();
 
                 inputUserMonthDataSteps.savingIndicatorsInTheTable(month, data, steps);
 
             } else if (userInput == 2) {
                 // kod "Напечатать статистику за опр-й мсяц"
+                int month = inputUserMonthDataSteps.inputUserMonth();
 
+                int data = inputUserMonthDataSteps.inputUserData();
+
+                int steps = inputUserMonthDataSteps.inputUserSteps();
+
+                statistic.printStatistic(month, data, steps);
 
             } else if (userInput == 3) {
                 // kod "Изменить цель по кол-ву шагов"
@@ -52,7 +51,7 @@ public class Main {
         System.out.println("Целевое колличество шагов =\n " +
                 "Выберете действие:\n" +
                 "1 - Ввести колличество шагов за определённый день\n" +
-                "2 - Напечатать статистику за определённый день\n" +
+                "2 - Напечатать статистику за определённый месяц\n" +
                 "3 - Изменить цель по колличеству шагов в день\n" +
                 "0 - Выйти из приложения");
     }
