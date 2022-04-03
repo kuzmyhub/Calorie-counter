@@ -25,13 +25,10 @@ public class Main {
 
             } else if (userInput == 2) {
                 // kod "Напечатать статистику за опр-й мсяц"
+
                 int month = inputUserMonthDataSteps.inputUserMonth();
 
-                int data = inputUserMonthDataSteps.inputUserData();
-
-                int steps = inputUserMonthDataSteps.inputUserSteps();
-
-                statistic.printStatistic(month, data, steps);
+                statistic.printStatistic(month);
 
             } else if (userInput == 3) {
                 // kod "Изменить цель по кол-ву шагов"
@@ -48,8 +45,7 @@ public class Main {
     }
 
     private static void printMenu() {
-        System.out.println("Целевое колличество шагов =\n " +
-                "Выберете действие:\n" +
+        System.out.println("Выберете действие:\n" +
                 "1 - Ввести колличество шагов за определённый день\n" +
                 "2 - Напечатать статистику за определённый месяц\n" +
                 "3 - Изменить цель по колличеству шагов в день\n" +

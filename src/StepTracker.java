@@ -19,7 +19,42 @@ public class StepTracker {
                 dataToSteps.put(i, 0);
             }
         }
-     }
+
+        @Override
+        public String toString() {
+
+            return "1-й день: " + dataToSteps.get(0).toString() + ", " +
+                    "2-й день: " + dataToSteps.get(1).toString() + ", " +
+                    "3-й день: " + dataToSteps.get(2).toString() + ", " +
+                    "4-й день: " + dataToSteps.get(3).toString() + ", " +
+                    "5-й день: " + dataToSteps.get(4).toString() + ", " +
+                    "6-й день: " + dataToSteps.get(5).toString() + ", " +
+                    "7-й день: " + dataToSteps.get(6).toString() + ", " +
+                    "8-й день: " + dataToSteps.get(7).toString() + ", " +
+                    "9-й день: " + dataToSteps.get(8).toString() + ", " +
+                    "10-й день: " + dataToSteps.get(9).toString() + ", " +
+                    "11-й день: " + dataToSteps.get(10).toString() + ", " +
+                    "12-й день: " + dataToSteps.get(11).toString() + ", " +
+                    "13-й день: " + dataToSteps.get(12).toString() + ", " +
+                    "14-й день: " + dataToSteps.get(13).toString() + ", " +
+                    "15-й день: " + dataToSteps.get(14).toString() + ", " +
+                    "16-й день: " + dataToSteps.get(15).toString() + ", " +
+                    "17-й день: " + dataToSteps.get(16).toString() + ", " +
+                    "18-й день: " + dataToSteps.get(17).toString() + ", " +
+                    "19-й день: " + dataToSteps.get(18).toString() + ", " +
+                    "20-й день: " + dataToSteps.get(19).toString() + ", " +
+                    "21-й день: " + dataToSteps.get(20).toString() + ", " +
+                    "22-й день: " + dataToSteps.get(21).toString() + ", " +
+                    "23-й день: " + dataToSteps.get(22).toString() + ", " +
+                    "24-й день: " + dataToSteps.get(23).toString() + ", " +
+                    "25-й день: " + dataToSteps.get(24).toString() + ", " +
+                    "26-й день: " + dataToSteps.get(25).toString() + ", " +
+                    "27-й день: " + dataToSteps.get(26).toString() + ", " +
+                    "28-й день: " + dataToSteps.get(27).toString() + ", " +
+                    "29-й день: " + dataToSteps.get(28).toString() + ", " +
+                    "30-й день: " + dataToSteps.get(29).toString();
+            }
+        }
 
 
 
@@ -75,6 +110,7 @@ public class StepTracker {
                 } else {
                     System.out.println("Некорректный ввод. Попробуйте ещё раз.");
                 }
+
             }
         }
 
@@ -111,8 +147,7 @@ public class StepTracker {
 
              monthData.dataToSteps.replace(data, steps);
              stepTracker.monthToData.replace(month, monthData);
-
-             System.out.println("В " + (month + 1) + "-м месяце ваша статистика " + stepTracker.monthToData.get(month+1));
+             System.out.println("В " + (month + 1) + "-м месяце ваша статистика " + stepTracker.monthToData.get(month));
          }
      }
 
@@ -121,10 +156,9 @@ public class StepTracker {
         StepTracker stepTracker = new StepTracker();
 
 
-        public void printStatistic(Integer month, Integer data, Integer steps) {
-
-            System.out.println("Количество пройденых шагов по дням в" + (month + 1) + "-м месяце:\n");
-
+        public void printStatistic(Integer month) {
+            System.out.println("Ваша статистика:\n" +
+                    stepTracker.monthToData.get(month));
         }
 
 
