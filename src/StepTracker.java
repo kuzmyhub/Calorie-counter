@@ -140,7 +140,7 @@ public class StepTracker {
          }
      }
 
-    class Save {
+    class Statistic {
         StepTracker stepTracker = new StepTracker();
 
         public void saveAll (Integer month, Integer data, Integer steps) {
@@ -149,8 +149,7 @@ public class StepTracker {
         }
 
         public void printStatistic(Integer month) {
-            System.out.println("Ваша статистика:\n" +
-                    stepTracker.monthToData.get(month));
+            System.out.println("Ваша статистика:\n" + stepTracker.monthToData.get(month) + "\n");
         }
     }
 }

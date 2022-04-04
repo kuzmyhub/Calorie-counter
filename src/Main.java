@@ -8,7 +8,7 @@ public class Main {
 
         StepTracker stepTracker = new StepTracker();
         StepTracker.Input input = stepTracker.new Input();
-        StepTracker.Save save = stepTracker.new Save();
+        StepTracker.Statistic statistic = stepTracker.new Statistic();
 
         while (userInput != 0) {
             if (userInput == 1) {
@@ -20,14 +20,14 @@ public class Main {
 
                 int steps = input.inputSteps();
 
-                save.saveAll(month, data, steps);
+                statistic.saveAll(month, data, steps);
 
             } else if (userInput == 2) {
                 // kod "Напечатать статистику за опр-й мсяц"
 
                 int month = input.inputMonth();
 
-                save.printStatistic(month);
+                statistic.printStatistic(month);
 
             } else if (userInput == 3) {
                 // kod "Изменить цель по кол-ву шагов"
