@@ -7,28 +7,27 @@ public class Main {
         int userInput = scanner.nextInt();
 
         StepTracker stepTracker = new StepTracker();
-        StepTracker.MonthData monthData = new StepTracker.MonthData();
-        StepTracker.InputUserMonthDataSteps inputUserMonthDataSteps = stepTracker.new InputUserMonthDataSteps();
-        StepTracker.Statistic statistic = stepTracker.new Statistic();
+        StepTracker.Input input = stepTracker.new Input();
+        StepTracker.Save save = stepTracker.new Save();
 
         while (userInput != 0) {
             if (userInput == 1) {
                 // kod "Ввести кол-во шагов за опр-й день"
 
-                int month = inputUserMonthDataSteps.inputUserMonth();
+                int month = input.inputMonth();
 
-                int data = inputUserMonthDataSteps.inputUserData();
+                int data = input.inputData();
 
-                int steps = inputUserMonthDataSteps.inputUserSteps();
+                int steps = input.inputSteps();
 
-                inputUserMonthDataSteps.savingIndicatorsInTheTable(month, data, steps);
+                save.saveAll(month, data, steps);
 
             } else if (userInput == 2) {
                 // kod "Напечатать статистику за опр-й мсяц"
 
-                int month = inputUserMonthDataSteps.inputUserMonth();
+                int month = input.inputMonth();
 
-                statistic.printStatistic(month);
+                save.printStatistic(month);
 
             } else if (userInput == 3) {
                 // kod "Изменить цель по кол-ву шагов"

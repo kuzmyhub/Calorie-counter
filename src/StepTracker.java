@@ -60,10 +60,10 @@ public class StepTracker {
 
 
 
-     class InputUserMonthDataSteps {
+     class Input {
         Scanner scanner = new Scanner(System.in);
 
-        public Integer inputUserMonth() {
+        public Integer inputMonth() {
             System.out.println("Введите название месяца\n" +
                     "Формат ввода:\n" +
                     "янв, февр, март, апр, май, июнь, июль, " +
@@ -114,7 +114,7 @@ public class StepTracker {
             }
         }
 
-         public Integer inputUserData() {
+         public Integer inputData() {
              System.out.println("Укажите номер дня (от 1 до 30):");
              while (true) {
                  Integer userData = scanner.nextInt();
@@ -127,7 +127,7 @@ public class StepTracker {
              }
          }
 
-         public Integer inputUserSteps() {
+         public Integer inputSteps() {
              System.out.println("Укажите количество шагов");
              while (true) {
                  Integer userSteps = scanner.nextInt();
@@ -136,32 +136,21 @@ public class StepTracker {
                  } else {
                      System.out.println("Некорректный ввод. Попробуйте ещё раз.");
                  }
-
              }
-
-         }
-
-         public void savingIndicatorsInTheTable(Integer month, Integer data, Integer steps) {
-             MonthData monthData = new MonthData();
-             StepTracker stepTracker = new StepTracker();
-
-             monthData.dataToSteps.replace(data, steps);
-             stepTracker.monthToData.replace(month, monthData);
-             System.out.println("В " + (month + 1) + "-м месяце ваша статистика " + stepTracker.monthToData.get(month));
          }
      }
 
-     class Statistic {
-        MonthData monthData = new MonthData();
+    class Save {
         StepTracker stepTracker = new StepTracker();
 
+        public void saveAll (Integer month, Integer data, Integer steps) {
+            stepTracker.monthToData.computeIfAbsent(month, m -> new MonthData()).dataToSteps.put(data, steps);
+            System.out.println("В " + (month + 1) + "-м месяце ваша статистика " + stepTracker.monthToData.get(month));
+        }
 
         public void printStatistic(Integer month) {
             System.out.println("Ваша статистика:\n" +
                     stepTracker.monthToData.get(month));
         }
-
-
-
-     }
+    }
 }
