@@ -1,4 +1,4 @@
-import java.util.Scanner;
+﻿import java.util.Scanner;
 import java.util.HashMap;
 
 public class StepTracker {
@@ -145,7 +145,7 @@ public class StepTracker {
 
         public void saveAll (Integer month, Integer data, Integer steps) {
             stepTracker.monthToData.computeIfAbsent(month, m -> new MonthData()).dataToSteps.put(data, steps);
-            System.out.println("В " + (month + 1) + "-м месяце ваша статистика: " + stepTracker.monthToData.get(month));
+            System.out.println("В " + (month + 1) + "-м месяце ваша статистика:\n" + stepTracker.monthToData.get(month));
         }
 
         public void printStatistic(Integer month) {
